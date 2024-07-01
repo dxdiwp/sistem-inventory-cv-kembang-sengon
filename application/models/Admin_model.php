@@ -123,7 +123,7 @@ class Admin_model extends CI_Model
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
         if ($limit != null) {
             $this->db->limit($limit);
-        }
+        } 
         if ($id_barang != null) {
             $this->db->where('id_barang', $id_barang);
         }
