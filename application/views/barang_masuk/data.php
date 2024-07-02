@@ -43,7 +43,7 @@
                         </button>
                     </div>
          <div class="col-auto">
-                <a href="<?= base_url('barangmasuk/cetak') ?>" class="btn btn-sm btn-primary btn-icon-split" target>
+                <a href="<?= base_url('barangmasuk/cetak') ?>" class="btn btn-sm btn-primary btn-icon-split" target="_blank">
                   
                     <span class="text">
                         Cetak
@@ -57,14 +57,14 @@
 
     </div>
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bahan Produksi</a>
-      </li>
+      </li> -->
       <!-- <li class="nav-item">
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ayam</a>
       </li> -->
-    </ul>
+    <!-- </ul> -->
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="table-responsive">

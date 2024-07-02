@@ -42,7 +42,7 @@
                         </button>
                     </div>
                     <div class="col-auto">
-                <a href="<?= base_url('barangkeluar/cetak') ?>" class="btn btn-sm btn-primary btn-icon-split" target>
+                <a href="<?= base_url('barangkeluar/cetak') ?>" class="btn btn-sm btn-primary btn-icon-split" target="_blank">
                   
                     <span class="text">
                         Cetak
@@ -97,7 +97,7 @@
                             <td>
                                 <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangkeluar/delete/') . $bk['id_barang_keluar'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
                                 <!-- <a onclick="return confirm('Print the letter?')" href="<?= base_url('barangkeluar/faktur_surat_jalan/') . $bk['id_barang_keluar'] ?>" class="btn btn-success btn-circle btn-sm"><i class="fa fa-car"></i></a> -->
-                                <a onclick="return confirm('Print Invoice?')" href="<?= base_url('barangkeluar/invoice/') . $bk['id_barang_keluar'] ?>" class="btn btn-info btn-circle btn-sm"><i class="fa fa-book"></i></a>
+                                <a onclick="return confirm('Print Invoice?')" href="<?= base_url('barangkeluar/invoice/') . $bk['id_barang_keluar'] ?>" class="btn btn-info btn-circle btn-sm" target="_blank"><i class="fa fa-book"></i></a>
                             </td>
 
                         </tr>

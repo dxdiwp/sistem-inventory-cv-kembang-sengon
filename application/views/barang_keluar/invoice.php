@@ -14,7 +14,7 @@
 </head>
 <body onload="window.print()">
 
-	<h1 align="center">Cetak Invoice <?= $row->id_barang_keluar ?></h1>
+	<h1 align="center">Cetak Invoice <?= $row->kd_barang_keluar ?></h1>
 
 
     <table border="1" width="50%" style="border-collapse: collapse;" align="center">

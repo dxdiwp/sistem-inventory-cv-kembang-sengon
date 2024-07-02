@@ -149,7 +149,7 @@ class Barangmasuk extends CI_Controller
         $this->db->join('barang b', 'bm.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
         $this->db->join('supplier sp', 'bm.supplier_id = sp.id_supplier');
-        $this->db->order_by('id_barang_masuk', 'DESC');
+        // $this->db->order_by('id_barang_masuk', 'DESC');
         $this->db->where('b.jenis', '1');
 
         if (@$_GET['periode']) {

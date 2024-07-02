@@ -135,7 +135,7 @@ class Barangkeluar extends CI_Controller
         $this->db->join('user u', 'bk.user_id = u.id_user');
         $this->db->join('barang b', 'bk.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
-        $this->db->order_by('id_barang_keluar', 'DESC');
+        // $this->db->order_by('id_barang_keluar', 'DESC');
 
         if (@$_GET['periode']) {
             $per = $this->db->query("SELECT * FROM periode WHERE id=$_GET[periode]")->result();

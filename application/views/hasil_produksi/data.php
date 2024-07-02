@@ -17,15 +17,14 @@
                     </span>
                 </a>
                 
-                <button onclick="window.location.href='<?= base_url('hasilproduksi/cetak') ?>'" type="button" id="cetak" name="cari" value="cetak" class="btn btn-sm btn-primary text-white-90 ml-2 py-1">
-    Cetak
-</button>
+                <!-- <button onclick="window.location.href='<?= base_url('hasilproduksi/cetak') ?>'" target="_blank" type="button" id="cetak" name="cari" value="cetak" class="btn btn-sm btn-primary text-white-90 ml-2 py-1"> -->
+                <a href="<?= base_url('hasilproduksi/cetak') ?>" target="_blank" type="button" id="cetak" name="cari" value="cetak" class="btn btn-sm btn-primary text-white-90 ml-2 py-1">Cetak</a>
 
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
     <form>
         <div class="input-group my-3">
         <select class="form-control" name="periode">
@@ -40,19 +39,19 @@
                             <span class="icon">
                                 <i class="fa fa-search"></i>
                             </span>
-                            <!-- <span class="text">
+                            <span class="text">
                                     Cari
-                                </span> -->
+                                </span>
                         </button>
                     </div>
                 </div>
     </form>
-    </div>
+    </div> -->
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ayam</a>
-      </li>
+      </li> -->
       <!-- <li class="nav-item">
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ayam</a>
       </li> -->
@@ -110,7 +109,7 @@
 <tfoot>
     <tr>
         <td colspan="4" align="center"><b>Total Jumlah Masuk</b></td>
-        <td align="left"><b><?= $totalJumlahKeluar; ?></b>pcs</td> 
+        <td align="left"><b><?= $totalJumlahKeluar; ?></b> pcs  </td> 
     </tr>
 </tfoot>
 

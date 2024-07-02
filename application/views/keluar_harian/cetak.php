@@ -44,7 +44,7 @@
         ?>
         <tr>
             <td><?= $no++; ?></td>
-            <td><?= $kh['id_keluar_harian']; ?></td>
+            <td><?= $kh['kd_keluar_harian']; ?></td>
             <td><?= $kh['tanggal_keluar']; ?></td>
             <td><?= $kh['nama_barang']; ?></td>
             <td><?= $kh['jumlah_keluar'] . ' ' . $kh['nama_satuan']; ?></td>

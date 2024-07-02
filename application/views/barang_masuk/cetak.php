@@ -28,8 +28,8 @@
                     <th>Subtotal</th>
                     <!-- <th>Total Netto</th> -->
                     <!-- <th>Berat Rata-Rata</th> -->
-                    <th>Nama Pembeli</th>
-                    <th>Alamat </th>
+                    <!-- <th>Nama Pembeli</th> -->
+                    <!-- <th>Alamat </th> -->
                 </tr>
             </thead>
             <tbody>
@@ -50,8 +50,8 @@
                             <td align="right"><?= number_format($bm['harga']*$bm['jumlah_masuk']); ?></td>
                             <!-- <td><?= $bm['total_berat']; ?></td> -->
                             <!-- <td><?= $bm['rata']; ?></td> -->
-                            <td><?= $bm['nama_pembeli']; ?></td>
-                            <td><?= $bm['alamat_pembeli']; ?></td>
+                            <!-- <td><?= $bm['nama_pembeli']; ?></td> -->
+                            <!-- <td><?= $bm['alamat_pembeli']; ?></td> -->
 
                         </tr>
                     <?php endforeach; ?>

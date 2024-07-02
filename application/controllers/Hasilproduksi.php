@@ -149,25 +149,25 @@ class Hasilproduksi extends CI_Controller
         $this->db->join('user u', 'kh.user_id = u.id_user');
         $this->db->join('barang b', 'kh.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
-        $this->db->order_by('id_hasil_produksi', 'DESC');
+        // $this->db->order_by('id_hasil_produksi', 'DESC');
     
         if (@$_GET['periode']) {
             $per = $this->db->query("SELECT * FROM periode WHERE id=$_GET[periode]")->result();
             $dari = $per[0]->dari;
             $sampai = $per[0]->sampai;
-            $this->db->where("tanggal BETWEEN '$dari' AND '$sampai' ");
+            $this->db->where("tanggal_masuk BETWEEN '$dari' AND '$sampai' ");
         }
     
         $data['keluarharian'] = $this->db->get('hasil_produksi kh')->result_array();
 
     
         // Query untuk keluaran pakan
-        $this->db->select('*');
-        $this->db->join('user u', 'kh.user_id = u.id_user');
-        $this->db->join('barang b', 'kh.barang_id = b.id_barang');
-        $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
-        $this->db->order_by('id_hasil_produksi', 'DESC');
-        $data['keluarharianpakan'] = $this->db->get('hasil_produksi kh')->result_array();
+        // $this->db->select('*');
+        // $this->db->join('user u', 'kh.user_id = u.id_user');
+        // $this->db->join('barang b', 'kh.barang_id = b.id_barang');
+        // $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
+        // $this->db->order_by('id_hasil_produksi', 'DESC');
+        // $data['keluarharianpakan'] = $this->db->get('hasil_produksi kh')->result_array();
     
         $data['periode'] = $this->db->get('periode')->result();
     

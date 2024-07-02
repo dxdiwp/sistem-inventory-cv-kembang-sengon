@@ -165,8 +165,8 @@ class Barang extends CI_Controller
 
         // $data['barang'] = $this->admin->getBarang();
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
-        $this->db->order_by('id_barang');
-        $data['barang'] = $this->db->where('id_barang',$q)->get('barang b')->result_array();
+        $this->db->order_by('jenis');
+        $data['barang'] = $this->db->where('jenis',$q)->get('barang b')->result_array();
 
         $this->load->view('barang/cetak',$data);
     }

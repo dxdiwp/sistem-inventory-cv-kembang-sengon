@@ -16,37 +16,35 @@
                         Tambah Data
                     </span>
                 </a>
-                <button onclick="window.location.href='<?= base_url('keluarharian/cetak') ?>'" type="button" id="cetak" name="cari" value="cetak" class="btn btn-sm btn-primary text-white-90 ml-2 py-1">
+                <!-- <button onclick="window.location.href='<?= base_url('keluarharian/cetak') ?>'" type="button" id="cetak" name="cari" value="cetak" class="btn btn-sm btn-primary text-white-90 ml-2 py-1"> -->
+                <a href="<?= base_url('keluarharian/cetak') ?>" target="_blank" type="button" id="cetak" name="cari" value="cetak" class="btn btn-sm btn-primary text-white-90 ml-2 py-1">
     Cetak
-</button>
+</a>
 
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
     <form>
         <div class="input-group my-3">
-        <select class="form-control" name="periode">
-            <option value="">Semua</option>
-            <?php foreach($periode as $item) { ?>
-            <option value="<?= $item->id ?>" <?= @$_GET['periode']==$item->id?'selected':'' ?>><?= $item->dari ?> - <?= $item->sampai ?></option>
-            <?php } ?>
-        </select>
-
-        <div class="input-group-append">
-                        <button type="submit" id="cari" name="cari" value="cari" class="btn btn-sm btn-primary text-white-50 py-1">
-                            <span class="icon">
-                                <i class="fa fa-search"></i>
-                            </span>
-                            <!-- <span class="text">
-                                    Cari
-                                </span> -->
-                        </button>
-                    </div>
-                </div>
+            <select class="form-control" name="periode">
+                <option value="">Semua</option>
+                <?php foreach($periode as $item) { ?>
+                <option value="<?= $item->id ?>" <?= @$_GET['periode']==$item->id?'selected':'' ?>><?= $item->dari ?> - <?= $item->sampai ?></option>
+                <?php } ?>
+            </select>
+            <div class="input-group-append">
+                <button type="submit" id="cari" name="cari" value="cari" class="btn btn-sm btn-primary text-white-50 py-1">
+                    <span class="icon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <span class="text">Cari</span>
+                </button>
+            </div>
+        </div>
     </form>
-    </div>
+    </div> -->
 
     <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
