@@ -72,7 +72,7 @@
                                 <?php endforeach; ?>
                             </select>
                             <div class="input-group-append">
-                                <a class="btn btn-primary" href="<?= base_url('barang/add'); ?>"><i class="fa fa-plus"></i></a>
+                                <a class="btn btn-primary" href="<?= base_url('bahanbaku/add'); ?>"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                         <?= form_error('barang_id', '<small class="text-danger">', '</small>'); ?>

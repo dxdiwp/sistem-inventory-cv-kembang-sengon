@@ -21,9 +21,9 @@
                 <tr>
                     <th>No. </th>
                     <th>No Transaksi</th>
-                    <th>Tanggal Keluar</th>
+                    <th>Tanggal Masuk</th>
                     <th>Nama Barang</th>
-                    <th>Jumlah Keluar</th>
+                    <th>Jumlah Masuk</th>
                     <th>Harga</th>
                     <th>Subtotal</th>
                     <!-- <th>Total Netto</th> -->

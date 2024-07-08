@@ -91,13 +91,13 @@ class Keluarharian extends CI_Controller
         } else {
             // $input = $this->input->post(null, true);
 
-            $id_keluar_harian = $this->admin->getMax('keluar_harian', 'id_keluar_harian');
-            $id_keluar_harian++;
+            // $id_keluar_harian = $this->admin->getMax('keluar_harian', 'id_keluar_harian');
+            // $id_keluar_harian++;
 
             $tgl_keluar = $this->input->post('tanggal_keluar');
             $barang = $this->input->post('barang_id');
             $qty = $this->input->post('jumlah_keluar');
-            $stok = $this->input->post('stok_k');
+            $stok = $this->input->post('total_stok');
             $ket = $this->input->post('keterangan');
 
             $kode = 'KH-';
@@ -108,7 +108,6 @@ class Keluarharian extends CI_Controller
             $kd_keluar_harian = $kode . $number;
 
             $input =array(
-                'id_keluar_harian' => $id_keluar_harian,
                 'kd_keluar_harian' => $kd_keluar_harian,
                 'user_id' => $this->session->userdata('login_session')['user'],
                 'barang_id' => $barang,

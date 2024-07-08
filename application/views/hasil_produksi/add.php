@@ -64,7 +64,9 @@
                 <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="stok">Stok</label>
                     <div class="col-md-5">
-                        <input readonly="readonly" id="stok" type="number" class="form-control" value="<?= @$barang['2']['stok']?>" >
+                        <!-- <input readonly="readonly" id="stok" type="number" class="form-control" value="<?= @$barang['2']['stok']?>" > -->
+                        <input readonly="readonly" id="stok" name="stok" type="number" class="form-control">
+
                     </div>
                 </div>
                 <div class="row form-group">
@@ -107,7 +109,7 @@
     </div>
 </div>
 
-<script src="<?= base_url('assets/') ?>plugins/jquery/jquery.min.js"></script>
+<!-- <script src="<?= base_url('assets/') ?>plugins/jquery/jquery.min.js"></script>
 
 <script type="text/javascript">
     
@@ -120,4 +122,4 @@
 
         $('#total_stok').val(total);
     });
-</script>
+</script> -->

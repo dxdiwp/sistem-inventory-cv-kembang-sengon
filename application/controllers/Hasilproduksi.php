@@ -91,8 +91,8 @@ class Hasilproduksi extends CI_Controller
             $this->template->load('templates/admin', 'hasil_produksi/add', $data);
         } else {
 
-            $id_produksi = $this->admin->getMax('hasil_produksi', 'id_hasil_produksi');
-            $id_produksi++;
+            // $id_produksi = $this->admin->getMax('hasil_produksi', 'id_hasil_produksi');
+            // $id_produksi++;
 
             $kode = 'HP-';
             $kode_terakhir = $this->admin->getMax('hasil_produksi', 'kd_hasil_produksi', $kode);
@@ -110,7 +110,6 @@ class Hasilproduksi extends CI_Controller
             
 
             $input = array(
-                'id_hasil_produksi' => $id_produksi,
                 'kd_hasil_produksi' => $kd_produksi,
                 'user_id' => $this->session->userdata('login_session')['user'],
                 'barang_id' => $barang,

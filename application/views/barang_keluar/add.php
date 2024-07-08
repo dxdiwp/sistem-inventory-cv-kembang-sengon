@@ -44,11 +44,11 @@
                             <select name="barang_id" id="barang_id" class="custom-select">
                                 <option value="" selected disabled>Pilih Barang</option>
                                 <?php foreach ($barang as $b) : ?>
-                                    <option value="<?= $b['id_barang'] ?>"><?= $b['kd_barang'] . ' | ' . $b['nama_barang'] ?></option>
+                                    <option value="<?= $b['id_barang'] ?>"><?= $b['kd_b_produksi'] . ' | ' . $b['nama_barang'] ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <div class="input-group-append">
-                                <a class="btn btn-primary" href="<?= base_url('barang/add'); ?>"><i class="fa fa-plus"></i></a>
+                                <a class="btn btn-primary" href="<?= base_url('barangproduksi/add'); ?>"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                         <?= form_error('barang_id', '<small class="text-danger">', '</small>'); ?>
@@ -57,7 +57,7 @@
                 <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="stok">Stok</label>
                     <div class="col-md-5">
-                        <input readonly="readonly" id="stok" type="number" class="form-control" value="<?= @$barang['0']['stok'] ?>" >
+                        <input readonly="readonly" id="stok" type="number" class="form-control" >
                     </div>
                 </div>
                 <div class="row form-group">
@@ -76,14 +76,14 @@
                 <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="harga">Harga Satuan</label>
                     <div class="col-md-5">
-                        <input name="harga" id="harga" type="number" class="form-control" disabled value="<?= @$barang['0']['harga'] ?>">
+                        <input name="harga" id="harga" type="number" class="form-control" disabled>
                     </div>
                 </div>
 
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="stok_k">Total Stok</label>
+                    <label class="col-md-4 text-md-right" for="total_stok">Total Stok</label>
                     <div class="col-md-5">
-                        <input readonly="readonly" id="stok_k" type="number" class="form-control">
+                        <input readonly="readonly" id="total_stok" name="total_stok" type="number" class="form-control">
                     </div>
                 </div>
                 
@@ -115,7 +115,7 @@
     </div>
 </div>
 
-
+<!-- 
 <script src="<?= base_url('assets/') ?>plugins/jquery/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -136,4 +136,4 @@
 
         $('#stok_k').val(total);
     });
-</script>
+</script> -->
