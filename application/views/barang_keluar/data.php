@@ -83,7 +83,7 @@
                         ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $bk['id_barang_keluar']; ?></td>
+                            <td><?= $bk['kd_barang_keluar']; ?></td>
                             <td><?= $bk['tanggal_keluar']; ?></td>
                             <td><?= $bk['nama_barang']; ?></td>
                             <td><?= $bk['jumlah_keluar'] . ' ' . $bk['nama_satuan']; ?></td>

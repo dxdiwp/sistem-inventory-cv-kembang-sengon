@@ -20,7 +20,7 @@ class Hasilproduksi extends CI_Controller
         $this->db->join('user u', 'hp.user_id = u.id_user');
         $this->db->join('barang b', 'hp.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
-        // $this->db->order_by('stok', 'DESC');
+        $this->db->order_by('id_hasil_produksi');
         $this->db->where('b.jenis', '2');
     
         if (@$_GET['periode']) {
@@ -149,7 +149,7 @@ class Hasilproduksi extends CI_Controller
         $this->db->join('user u', 'kh.user_id = u.id_user');
         $this->db->join('barang b', 'kh.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
-        // $this->db->order_by('id_hasil_produksi', 'DESC');
+        $this->db->order_by('id_hasil_produksi');
     
         if (@$_GET['periode']) {
             $per = $this->db->query("SELECT * FROM periode WHERE id=$_GET[periode]")->result();

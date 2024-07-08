@@ -14,7 +14,8 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['title'] = "Dashboard";
-        $data['barang'] = $this->admin->count('barang');
+        $data['bahanbaku'] = $this->admin->count('barang', 'jenis' == '1');
+        $data['barangproduksi'] = $this->admin->count('barang', 'jenis' == '2');
         $data['barang_masuk'] = $this->admin->count('barang_masuk');
         $data['barang_keluar'] = $this->admin->count('barang_keluar');
         $data['keluar_harian'] = $this->admin->count('keluar_harian');

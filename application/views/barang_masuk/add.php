@@ -67,7 +67,7 @@
                                 <?php foreach ($barang as $b) : ?>
                                     <!-- <option <?= $this->uri->segment(3) == $b['kd_barang'] ? 'selected' : '';  ?> <?= set_select('barang_id', $b['kd_barang']) ?> value="<?= $b['kd_barang'] ?>"> -->
                                    <option <?= set_select('barang_id', $b['id_barang'])?> value="<?= $b['id_barang'] ?>">
-                                    <?= $b['kd_barang'] . ' | ' . $b['nama_barang'] ?>
+                                    <?= $b['kd_b_baku'] . ' | ' . $b['nama_barang'] ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -79,9 +79,9 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="stok">Stok</label>
+                    <label class="col-md-4 text-md-right" for="">Stok</label>
                     <div class="col-md-5">
-                        <input readonly="readonly" id="stok" type="number" class="form-control" value="<?= @$barang['0']['stok'] ?>" >
+                        <input readonly="readonly" id="stok" name="stok" type="number" class="form-control">
                         <!-- <?= set_value('stok', $b['id_barang']) ?> value="<?= $b['stok']?>"> -->
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                 <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="harga">Harga</label>
                     <div class="col-md-5">
-                        <input id="harga" name="harga" type="number" class="form-control" value="<?= @$barang[0]['harga'] ?>" readonly>
+                        <input id="harga" name="harga" type="number" class="form-control" readonly>
                     </div>
                 </div>
 
@@ -124,14 +124,4 @@
 </div>
 
 <script src="<?= base_url('assets/') ?>plugins/jquery/jquery.min.js"></script>
-
-<script type="text/javascript">
-    var stok = $('#stok').val();
-
-    $('#jumlah_masuk').on("input",function() {
-        var value = $(this).val();
-        var total = parseInt(value) + parseInt(stok);
-
-        $('#total_stok').val(total);
-    });
-</script>
+        

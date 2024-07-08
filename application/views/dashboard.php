@@ -23,7 +23,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3><?= $barang ?></h3>
+                <h3><?= $bahanbaku ?></h3>
 
                 <p>Total Data Barang</p>
               </div>
@@ -75,13 +75,13 @@
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer"> <i class="fas ">. . . </i></a>
             </div>
           </div>
           <!-- ./col -->
         </div>
 
-
+<!-- 
 <div class="mb-5">
     <form method="post" action="<?= base_url('dashboard/periode') ?>">
         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
@@ -108,7 +108,7 @@
 
         
     </form>
-</div>
+</div> -->
 
 <div class="row">
  <div class="col">

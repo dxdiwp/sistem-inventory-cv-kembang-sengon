@@ -28,7 +28,6 @@ class Barang extends CI_Controller
 
         $this->template->load('templates/admin', 'barang/data', $data);
     }
-
     private function _validasi()
     {
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required|trim');
@@ -51,12 +50,6 @@ class Barang extends CI_Controller
             // $kode_tambah++;
             // $kode_baru = str_pad($kode_tambah, 6, '0', STR_PAD_LEFT);
             
-            // if($jenis == '1'){
-            //     $data['kd_barang'] = 'B' . $kode_baru;
-            // }else{
-            //     $data['kd_barang'] = 'P' . $kode_baru;
-            // }
-            
             $this->template->load('templates/admin', 'barang/add', $data);
         } else {
 
@@ -66,8 +59,8 @@ class Barang extends CI_Controller
             $satuan = $this->input->post('satuan_id');
             $harga = $this->input->post('harga');
 
-            $id_barang = $this->admin->getMax('barang', 'id_barang');
-            $id_barang++;
+            // $id_barang = $this->admin->getMax('barang', 'id_barang');
+            // $id_barang++;
             
 
             if($jenis == '1'){
@@ -85,7 +78,7 @@ class Barang extends CI_Controller
             }
             
             $input = array(
-                'id_barang' => $id_barang,
+                // 'id_barang' => $id_barang,
                 'kd_barang' => $kd,
                 'nama_barang' => $nama,
                 'harga' => $harga,
@@ -103,6 +96,7 @@ class Barang extends CI_Controller
             }
         }
     }
+
 
     public function edit($getId)
     {
@@ -157,6 +151,7 @@ class Barang extends CI_Controller
         $query = $this->admin->cekStok($id);
         output_json($query);
     }
+    
 
     public function cetak()
     {

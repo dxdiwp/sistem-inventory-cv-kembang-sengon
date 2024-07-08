@@ -74,6 +74,16 @@ class Admin_model extends CI_Model
         $this->db->order_by('id_barang_masuk', 'DESC');
         return $this->db->get('barang_masuk bm')->result_array();
     }
+    public function getStok($id_barang)
+    {
+        $this->db->select('stok');
+        $this->db->where('id_barang', $id_barang);
+        $query = $this->db->get('barang');
+        $barang = $query->row();    
+        if ($barang) {
+            return $barang->stok;
+        }
+    }
 
     public function getBarangKeluar($limit = null, $id_barang = null, $range = null)
     {
@@ -128,8 +138,8 @@ class Admin_model extends CI_Model
             $this->db->where('id_barang', $id_barang);
         }
         if ($range != null) {
-            $this->db->where('tanggal' . ' >=', $range['mulai']);
-            $this->db->where('tanggal' . ' <=', $range['akhir']);
+            $this->db->where('tanggal_masuk' . ' >=', $range['mulai']);
+            $this->db->where('tanggal_masuk' . ' <=', $range['akhir']);
         }
         $this->db->order_by('id_hasil_produksi', 'DESC');
         return $this->db->get('hasil_produksi hp')->result_array();
@@ -179,7 +189,17 @@ class Admin_model extends CI_Model
 
     public function laporan($table, $mulai, $akhir)
     {
-        $tgl = $table == 'barang_masuk' ? 'tanggal_masuk' : 'tanggal_keluar';
+        // $tgl = $table == 'barang_masuk' ? 'tanggal_masuk' : 'tanggal_keluar';
+
+        if($table == 'barang_masuk')
+        {
+            $tgl = 'tanggal_masuk';
+        }elseif($table == 'barang_keluar')
+        {
+            $tgl = 'tanggal_keluar';
+        }else{
+            $tgl = 'tanggal_masuk';
+        }
         $this->db->where($tgl . ' >=', $mulai);
         $this->db->where($tgl . ' <=', $akhir);
         return $this->db->get($table)->result_array();

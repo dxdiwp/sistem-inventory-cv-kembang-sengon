@@ -4,16 +4,15 @@
         <div class="row">
             <div class="col">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                    Data Barang
+                    Data Bahan Baku
                 </h4>
 
-                <a href="<?= base_url('barang/cetak?q='.@$_GET['q']) ?>" class="btn btn-primary mt-3" target="_blank">Cetak</a>
+                <a href="<?= base_url('bahanbaku/cetak') ?>" class="btn btn-primary mt-3" target="_blank">Cetak</a>
 
             </div>
             <?php if (is_admin()) : ?>
-                <?php if(base_url('barang?q=1')) : ?>
                     <div class="col-auto">
-                        <a href="<?= base_url('barang/addBahanBaku') ?>" class="btn btn-sm btn-primary btn-icon-split">
+                        <a href="<?= base_url('bahanbaku/add') ?>" class="btn btn-sm btn-primary btn-icon-split">
                             <span class="icon">
                                 <i class="fa fa-plus"></i>
                             </span>
@@ -22,19 +21,6 @@
                             </span>
                         </a>
                     </div>
-                <?php else : ?>
-                    <div class="col-auto">
-                        <a href="<?= base_url('barang/addBarangProduksi') ?>" class="btn btn-sm btn-primary btn-icon-split">
-                            <span class="icon">
-                                <i class="fa fa-plus"></i>
-                            </span>
-                            <span class="text">
-                                Tambah Barang
-                            </span>
-                        </a>
-                    </div>
-                <?php endif; ?>
-
             <?php endif; ?> 
         </div>
     </div>
@@ -59,17 +45,15 @@
                         ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $b['kd_barang']; ?>    
-                                <?= $b['kd_barang']; ?>    
-                            </td>
+                            <td><?= $b['kd_b_baku']; ?></td>
                             <td><?= $b['nama_barang']; ?></td>
                             <td><?= $b['stok']; ?></td>
                             <td><?= number_format($b['harga']); ?></td>
                             <td><?= $b['nama_satuan']; ?></td>
                             <td>
                             <?php if (is_admin()) : ?>
-                                <a href="<?= base_url('barang/edit/') . $b['id_barang'] ?>" class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i></a>
-                                <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barang/delete/') . $b['id_barang'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
+                                <a href="<?= base_url('bahanbaku/edit/') . $b['id_barang'] ?>" class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i></a>
+                                <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('bahanbaku/delete/') . $b['id_barang'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
                                 <?php endif; ?> 
                             </td>
                         </tr>

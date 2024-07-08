@@ -128,13 +128,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url('barang?q=1'); ?>" class="nav-link">
+                <!-- <a href="<?= base_url('barang?q=1'); ?>" class="nav-link"> -->
+                <a href="<?= base_url('bahanbaku'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bahan Baku</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('barang?q=2'); ?>" class="nav-link">
+                <a href="<?= base_url('barangproduksi'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Barang Produksi</p>
                 </a>
@@ -178,14 +179,14 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="<?= base_url('keuangan'); ?>" class="nav-link">
               <i class="nav-icon fas fa-fw  fa-folder"></i>
               <p>
                 Catatan Keuangan
               </p>
             </a>
-          </li>
+          </li> -->
          
           <li class="nav-header">Report</li>
           <li class="nav-item">
@@ -436,6 +437,36 @@
           }
         }
       });
+</script>
+<script type="text/javascript">
+      let hal = '<?= $this->uri->segment(1); ?>';
+
+        let satuan = $('#satuan');
+        let harga = $('#harga');
+        let stok = $('#stok');
+        let total = $('#total_stok');
+        let jumlah = hal == 'barangmasuk' ? $('#jumlah_masuk') : $('#jumlah_keluar');
+
+        $(document).on('change', '#barang_id', function() {
+            let url = '<?= base_url('barang/getstok/'); ?>' + this.value;
+            $.getJSON(url, function(data) {
+                satuan.html(data.nama_satuan);
+                harga.val(data.harga);
+                stok.val(data.stok);
+                total.val(data.stok);
+                jumlah.focus();
+            });
+        });
+
+        $(document).on('keyup', '#jumlah_masuk', function() {
+            let totalStok = parseInt(stok.val()) + parseInt(this.value);
+            total.val(Number(totalStok));
+        });
+
+        $(document).on('keyup', '#jumlah_keluar', function() {
+            let totalStok = parseInt(stok.val()) - parseInt(this.value);
+            total.val(Number(totalStok));
+        });
 </script>
 
 </body>

@@ -44,7 +44,7 @@
         ?>
         <tr>
             <td><?= $no++; ?></td>
-            <td><?= $kh['id_hasil_produksi']; ?></td>
+            <td><?= $kh['kd_hasil_produksi']; ?></td>
             <td><?= $kh['tanggal_masuk']; ?></td>
             <td><?= $kh['nama_barang']; ?></td>
             <td><?= $kh['jumlah_masuk'] . ' ' . $kh['nama_satuan']; ?></td>

@@ -42,7 +42,7 @@
                         ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $bm['id_barang_masuk']; ?></td>
+                            <td><?= $bm['kd_barang_masuk']; ?></td>
                             <td><?= $bm['tanggal_masuk']; ?></td>
                             <td><?= $bm['nama_barang']; ?></td>
                             <td><?= $bm['jumlah_masuk'] . ' ' . $bm['nama_satuan']; ?></td>

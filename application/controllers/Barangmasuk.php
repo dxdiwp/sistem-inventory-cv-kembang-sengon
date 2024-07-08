@@ -21,7 +21,7 @@ class Barangmasuk extends CI_Controller
         $this->db->join('supplier sp', 'bm.supplier_id = sp.id_supplier');
         $this->db->join('barang b', 'bm.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
-        // $this->db->order_by('id_barang_masuk', 'DESC');
+        $this->db->order_by('id_barang_masuk');
         $this->db->where('b.jenis', '1');
 
         if (@$_GET['periode']) {
@@ -88,17 +88,15 @@ class Barangmasuk extends CI_Controller
         } else {
 
             // $input = $this->input->post(null, true);
-            // $id_user = $this->session;
-            // $id_trx = $this->input->post('kd_barang_masuk');
+
             $tgl_masuk = $this->input->post('tanggal_masuk');
             $supplier = $this->input->post('supplier_id');
             $barang = $this->input->post('barang_id');
-            // $stok = $this->input->post('stok');
             $harga = $this->input->post('harga');
             $qty = $this->input->post('jumlah_masuk');
 
-            $id_barang_masuk = $this->admin->getMax('barang_masuk', 'id_barang_masuk');
-            $id_barang_masuk++;
+            // $id_barang_masuk = $this->admin->getMax('barang_masuk', 'id_barang_masuk');
+            // $id_barang_masuk++;
 
             $kode = 'PB-';
             $kode_terakhir = $this->admin->getMax('barang_masuk', 'kd_barang_masuk', $kode);
@@ -108,17 +106,15 @@ class Barangmasuk extends CI_Controller
             $kd_barang_masuk = $kode . $number;
 
             $input = array(
-                'id_barang_masuk' => $id_barang_masuk,
+                // 'id_barang_masuk' => $id_barang_masuk,
                 'kd_barang_masuk' => $kd_barang_masuk,
                 'supplier_id' => $supplier,
-                // 'user_id' => $this->session->id_user,
                 'user_id' => $this->session->userdata('login_session')['user'],
-                 'barang_id' => $barang,
+                'barang_id' => $barang,
                 'jumlah_masuk' => $qty,
                 'harga' => $harga,
                 'tanggal_masuk' => $tgl_masuk 
             );
-
             $insert = $this->admin->insert('barang_masuk', $input);
 
             if ($insert) {
@@ -130,6 +126,13 @@ class Barangmasuk extends CI_Controller
             }
         }
     }
+    // public function getStokBarang()
+    // {
+    //     $id_barang = $this->input->post('barang_id');
+    //     $stok = $this->Admin_model->getStok($id_barang);
+
+    //     echo json_encode($stok);
+    // }
 
     public function delete($getId)
     {
@@ -149,7 +152,7 @@ class Barangmasuk extends CI_Controller
         $this->db->join('barang b', 'bm.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
         $this->db->join('supplier sp', 'bm.supplier_id = sp.id_supplier');
-        // $this->db->order_by('id_barang_masuk', 'DESC');
+        $this->db->order_by('id_barang_masuk');
         $this->db->where('b.jenis', '1');
 
         if (@$_GET['periode']) {

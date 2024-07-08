@@ -20,7 +20,7 @@ class Keluarharian extends CI_Controller
         $this->db->join('user u', 'kh.user_id = u.id_user');
         $this->db->join('barang b', 'kh.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
-        // $this->db->order_by('id_keluar_harian', 'DESC');
+        $this->db->order_by('id_keluar_harian');
         $this->db->where('b.jenis', '1');
     
         if (@$_GET['periode']) {
@@ -148,7 +148,7 @@ class Keluarharian extends CI_Controller
         $this->db->join('user u', 'kh.user_id = u.id_user');
         $this->db->join('barang b', 'kh.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
-        // $this->db->order_by('id_keluar_harian', 'DESC');
+        $this->db->order_by('id_keluar_harian');
         $this->db->where('b.jenis', '1');
     
         if (@$_GET['periode']) {

@@ -23,7 +23,7 @@ class Laporan extends CI_Controller
         } else {
             $input = $this->input->post(null, true);
             $table = $input['transaksi'];
-            $tanggal = $input['tanggal_masuk'];
+            $tanggal = $input['tanggal'];
             $pecah = explode(' - ', $tanggal);
             $mulai = date('Y-m-d', strtotime($pecah[0]));
             $akhir = date('Y-m-d', strtotime(end($pecah)));
@@ -44,7 +44,18 @@ class Laporan extends CI_Controller
     private function _cetak($data, $table_, $tanggal)
     {
         $this->load->library('CustomPDF');
-        $table = $table_ == 'barang_masuk' ? 'Pembelian' : 'Pengeluaran'   ;
+        // $table = $table_ == 'barang_masuk' ? 'Pembelian' : 'Pengeluaran'   ;
+
+        if($table_ == 'barang_masuk')
+        {   
+            $table = 'Pembelian';
+        }elseif($table_ == 'barang_keluar')
+        {
+            $table = 'Penjualan';
+        }else{
+            $table = 'Hasil Produksi';
+        }
+
 
         $pdf = new FPDF();
         $pdf->AddPage('P', 'Letter');
@@ -132,7 +143,7 @@ class Laporan extends CI_Controller
                 
                 $pdf->SetFont('Arial', '', 10);
                 $pdf->Cell(10, 7, $no++ . '.', 1, 0, 'C');
-                $pdf->Cell(40, 7, $d['tanggal'], 1, 0, 'C');
+                $pdf->Cell(40, 7, $d['tanggal_masuk'], 1, 0, 'C');
                 $pdf->Cell(45, 7, $d['nama_barang'], 1, 0, 'L');
                 // $pdf->Cell(60, 7, $d['keterangan'], 1, 0, 'C');
                 $pdf->Cell(50, 7, $d['jumlah_masuk'] . ' ' . $d['nama_satuan'], 1, 0, 'C');
